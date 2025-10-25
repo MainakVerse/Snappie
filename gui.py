@@ -10,7 +10,7 @@ from utils import Logger, get_output_path
 class VideoTrimmerApp:
     def __init__(self):
         self.root = tk.Tk()
-        self.root.title("🎬 Smart Video Trimmer")
+        self.root.title("🎬 SNAPPIE ")
         self.root.geometry("640x820")
 
         self.video_path = None
@@ -177,7 +177,7 @@ class VideoTrimmerApp:
             self.trimmer.trim(self.video_path, self.start_frame, self.end_frame, output_path)
             self.logger.log(self.video_path, self.start_frame, self.end_frame, output_path)
             messagebox.showinfo("Success", f"Trimmed video saved at:\n{output_path}")
-            self.status_label.config(text="Trim completed successfully.")
+            self.status_label.config(text="Trim completed successfully!")
         except Exception as e:
             messagebox.showerror("Error", f"Failed to trim video:\n{e}")
 
