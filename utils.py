@@ -1,17 +1,11 @@
-import os
-import csv
-import datetime
-
+import os, csv, datetime
 
 def get_output_path(video_path, start, end):
-    """Generates a clean output path in the same folder as the input video."""
     base, ext = os.path.splitext(video_path)
     filename = f"{os.path.basename(base)}_{start}To{end}{ext}"
     return os.path.join(os.path.dirname(video_path), filename)
 
-
 class Logger:
-    """Logs trimming data into a CSV file."""
     def __init__(self, csv_path):
         os.makedirs(os.path.dirname(csv_path), exist_ok=True)
         self.csv_path = csv_path
